@@ -1,0 +1,18 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+      <td>Game Name</td>
+      <td>Game Price</td>
+      <td colspan="2">Actions</td>
+  </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let game of games">
+          <td>{{ game.name }}</td>
+          <td>{{ game.price }}</td>
+          <td><a [routerLink]="['/edit', game._id]" class="btn btn-primary">Edit</a></td>
+          <td><button (click)="deleteGame(game._id)"  class="btn btn-danger">Delete</button></td>
+      </tr>
+  </tbody>
+</table>
